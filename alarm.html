@@ -1,0 +1,48 @@
+<html>
+<head>
+    <link rel="stylesheet" href="alarm.css">
+    <script src="alarm.js"></script>
+</head>
+<body onload = "myclock()">
+
+   <section>
+        <div id="myClock"></div>
+    <div class="clockLayer" id = "clockiee">
+    <input type="datetime-local" id = "date-time" required>
+    <button onclick="setTime()">setAlarm</button>
+    <button onclick="stopAlarm()" id="stop">StopAlarm</button>
+    <button onclick="snooze()" id="stop">Snooze</button>
+     <button onclick="setTime()">Add field</button> 
+    </div>
+</section>
+
+</div>
+<script>
+    function myclock(){
+        var date = new Date();
+        h = date.getHours();
+        t = date.getMinutes();
+        s = date.getSeconds();
+        session = "AM";
+        if(h>12){
+            h=h-12;
+            session = "PM";
+        }
+        var time = h+":"+t+":"+s+" "+session;
+        document.getElementById("myClock").innerHTML = time;
+        setTimeout(myclock,1000);
+    }
+    // new alarm clock design
+    function myFunction() {
+    var position = document.getElementById("clockiee");
+    var x = document.createElement("INPUT");
+    x.setAttribute("type", "datetime-local");
+    position.insertBefore(x,position[0]);
+    
+}
+    
+    
+</script>
+  
+</body>
+</html>
